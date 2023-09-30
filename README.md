@@ -1,4 +1,4 @@
-# Different ways to deserialize json in spring kafka
+# Different ways to spring kafka deserialize json in kotlin
 
 - docker 폴더는 kafka docker compose와 kafka topic create문이 존재합니다.
 - customDefaultConsumerFactory, customDeserializer, customTypeConverter는 각각 구현방법이 다른 컨슈머 모듈이다.
