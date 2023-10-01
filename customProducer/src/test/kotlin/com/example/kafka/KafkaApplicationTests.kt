@@ -17,6 +17,6 @@ class KafkaApplicationTests {
 
 	@Test
 	fun something2() {
-		producer.send(CustomProducer.OtherInfo("홍길동", 12))
+		producer.send(CustomProducer.OtherUserInfo("홍길동", 12))
 	}
 }

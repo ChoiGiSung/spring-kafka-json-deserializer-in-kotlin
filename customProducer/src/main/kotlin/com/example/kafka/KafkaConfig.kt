@@ -21,7 +21,6 @@ class KafkaConfig(
 ) : DefaultKafkaProducerFactoryCustomizer {
 
     override fun customize(producerFactory: DefaultKafkaProducerFactory<*, *>?) {
-//        producerFactory?.updateConfigs(producerFactory())
         (producerFactory as DefaultKafkaProducerFactory<Any, Any>).valueSerializer = JsonSerializer(objectMapper)
     }
 
@@ -32,10 +31,5 @@ class KafkaConfig(
         config[ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG] = JsonDeserializer::class.java
         return config
     }
-
-//    @Bean
-//    fun kafkaTemplate(): KafkaTemplate<String, Long> {
-//        return KafkaTemplate(producerFactory())
-//    }
 
 }

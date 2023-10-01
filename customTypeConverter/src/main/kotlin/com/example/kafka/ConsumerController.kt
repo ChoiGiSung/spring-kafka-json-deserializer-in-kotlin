@@ -13,8 +13,18 @@ class ConsumerController {
         println(userInfo)
     }
 
+    @KafkaHandler
+    fun consume(userInfo: OtherUserInfo) {
+        println(userInfo)
+    }
+
     data class UserInfo(
         val name: String,
         val phoneNumber: String
+    )
+
+    data class OtherUserInfo(
+        val address: String,
+        val age: Int
     )
 }

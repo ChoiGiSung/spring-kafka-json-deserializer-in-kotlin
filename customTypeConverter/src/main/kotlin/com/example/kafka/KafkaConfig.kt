@@ -21,6 +21,7 @@ class KafkaConfig(
         val typeMapper = DefaultJackson2JavaTypeMapper()
         val mappings: MutableMap<String, Class<*>> = mutableMapOf()
         mappings["CREATE"] = ConsumerController.UserInfo::class.java
+        mappings["UPDATE"] = ConsumerController.OtherUserInfo::class.java
         typeMapper.typePrecedence = Jackson2JavaTypeMapper.TypePrecedence.TYPE_ID
         typeMapper.idClassMapping = mappings
         converter.typeMapper = typeMapper
