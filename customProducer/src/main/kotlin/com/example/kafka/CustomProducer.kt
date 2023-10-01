@@ -11,9 +11,18 @@ class CustomProducer(
     fun send(userInfo: UserInfo) {
         kafkaTemplate.send("testTopic", userInfo)
     }
+    fun send(otherInfo: OtherInfo) {
+        kafkaTemplate.send("testTopic", otherInfo)
+    }
 
     data class UserInfo(
         val name: String,
-        val phoneNumber: String
+        val phoneNumber: String,
+        val doSomething: String,
+    )
+
+    data class OtherInfo(
+        val address: String,
+        val age: Int
     )
 }
